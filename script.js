@@ -23,6 +23,14 @@ const questions = [
   },
 ];
 
+function welcome() {
+  const username = R.question(
+    'Welcome to "Do you know your cars?". What shall we call you? '
+  );
+  console.log(`Welcome again, ${username}. All the best with the quiz!`);
+  console.log('-------------------\n\n');
+}
+
 function playGame() {
   for (const Q of questions) {
     const answer = R.question(Q.question).toLowerCase();
@@ -34,5 +42,13 @@ function playGame() {
   }
 }
 
+function displayScore() {
+  console.log(
+    `\n\nYou answered ${correctAnswers}/${questions.length} questions correctly.\nFinal score is ${score}`
+  );
+}
+
 //---------------------
+welcome();
 playGame();
+displayScore();
