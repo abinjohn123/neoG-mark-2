@@ -22,3 +22,17 @@ const questions = [
     answer: 'korea',
   },
 ];
+
+function playGame() {
+  for (const Q of questions) {
+    const answer = R.question(Q.question).toLowerCase();
+
+    if (answer === Q.answer) {
+      console.log(`Right answer! Score = ${++score}\n`);
+      ++correctAnswers;
+    } else console.log(`Wrong answer! Score = ${--score}\n`);
+  }
+}
+
+//---------------------
+playGame();
